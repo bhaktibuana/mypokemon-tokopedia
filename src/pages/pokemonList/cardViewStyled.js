@@ -30,7 +30,8 @@ export const CardContainer = styled.div`
 `;
 
 export const CardImage = styled.div`
-  width: auto;
+  max-width: 96px;
+  min-width: 96px;
   height: 120px;
   border-radius: 0.25rem;
   display: flex;
