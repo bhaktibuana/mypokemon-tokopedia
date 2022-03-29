@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SidebarStateContext } from "../../App";
 import Footer from "../../components/footer";
 import Navbar from "../../components/navbar";
 import Sidebar from "../../components/sidebar";
@@ -17,8 +18,6 @@ import {
 } from "./style";
 import Pagination from "../../components/pagination";
 import CardSkeleton from "./cardSkeleton";
-
-export const SidebarStateContext = React.createContext();
 
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
