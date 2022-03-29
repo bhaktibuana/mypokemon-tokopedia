@@ -6,6 +6,8 @@ import PokemonDetail from "./pages/pokemonDetail";
 
 import "./App.css";
 
+export const SidebarStateContext = React.createContext();
+
 const App = () => {
 
   useEffect(() => {
@@ -19,7 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<PokemonList />} />
           <Route path="/mypokemonlist" element={<MyPokemon />} />
-          <Route path="/pokemon/:id-:name" element={<PokemonDetail />} />
+          <Route path="/pokemon/:name" element={<PokemonDetail />} />
         </Routes>
       </BrowserRouter>
     </>
