@@ -253,3 +253,13 @@ export const CardButton = styled.div`
     }
   }
 `;
+
+export const CardIcon = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  color: ${buttonSuccess};
+`;
