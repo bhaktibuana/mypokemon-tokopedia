@@ -41,6 +41,7 @@ const PokemonList = () => {
   const [pokeCard, setPokeCard] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
+  const [clearOwned, setClearOwned] = useState(false);
 
   const pageSize = 10;
 
@@ -87,12 +88,14 @@ const PokemonList = () => {
       setTotalPage(Math.ceil(data.pokemons.count / pageSize));
       handlePokeCard(data.pokemons.results);
     }
-  }, [loading, error, data]);
+  }, [loading, error, data, clearOwned]);
 
   return (
     <>
       <PokemonListContainer>
-        <SidebarStateContext.Provider value={[showSidebar, setShowSidebar]}>
+        <SidebarStateContext.Provider
+          value={[showSidebar, setShowSidebar, setClearOwned]}
+        >
           <Sidebar pageName="pokemon-list" />
           <Navbar pageName="pokemon-list" />
         </SidebarStateContext.Provider>
