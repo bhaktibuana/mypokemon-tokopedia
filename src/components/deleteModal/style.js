@@ -8,7 +8,7 @@ const buttonDanger = "#ff5b5b";
 export const ModalContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.5);
   display: ${(props) => (props.visible ? "flex" : "none")};
@@ -80,9 +80,16 @@ export const DeleteButton = styled.div`
     cursor: pointer;
     font-size: 1.1rem;
     transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active {
+      box-shadow: none;
     }
   }
 
@@ -99,9 +106,16 @@ export const DeleteButton = styled.div`
     cursor: pointer;
     font-size: 1.1rem;
     transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active {
+      box-shadow: none;
     }
   }
 `;
