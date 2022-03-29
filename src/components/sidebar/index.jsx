@@ -77,7 +77,7 @@ const Sidebar = (props) => {
               />
 
               <div className="profile-text">
-                <p>Pokemon Keeper</p>
+                <p>Pokemon Trainer</p>
 
                 <div className="arrow-icon">
                   <MdOutlineArrowDropDown size={24} />
@@ -134,7 +134,12 @@ const Sidebar = (props) => {
         </SidebarContent>
       </SidebarContainer>
 
-      <DeleteModal visible={modalVisible} setVisible={setModalVisible} />
+      <DeleteModal
+        visible={modalVisible}
+        setVisible={setModalVisible}
+        setClearOwned={sidebarState[2]}
+        pageName={props.pageName}
+      />
     </>
   );
 };

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { MdCheckCircleOutline } from "react-icons/md";
 import {
   CardBody,
   CardButton,
   CardContent,
+  CardIcon,
   CardTitle,
   ModalCard,
   ModalContainer,
@@ -16,6 +18,7 @@ const CatchPokeModal = (props) => {
   const [nickname, setNickname] = useState("");
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isSaved, setIsSaved] = useState(false);
 
   const firstLetterUpperCase = (value) => {
     return value.charAt(0).toUpperCase() + value.slice(1);
@@ -23,7 +26,9 @@ const CatchPokeModal = (props) => {
 
   const handleSave = () => {
     const getSavedData = JSON.parse(localStorage.getItem("my_pokemon_data"));
-    const checkDuplicate = getSavedData.filter(items => items.nickname === nickname);
+    const checkDuplicate = getSavedData.filter(
+      (items) => items.nickname === nickname
+    );
 
     if (nickname === "") {
       setShowError(true);
@@ -47,7 +52,7 @@ const CatchPokeModal = (props) => {
 
       localStorage.setItem("my_pokemon_data", JSON.stringify(newData));
 
-      handleCancel();
+      setIsSaved(true);
     }
   };
 
@@ -56,6 +61,7 @@ const CatchPokeModal = (props) => {
   };
 
   const handleCancel = () => {
+    setIsSaved(false);
     setNickname("");
     setCatchResult(null);
     props.setVisible(false);
@@ -72,7 +78,7 @@ const CatchPokeModal = (props) => {
         } else {
           setCatchResult(false);
         }
-      }, 1000);
+      }, 2000);
     }
   }, [props.visible, catchResult]);
 
@@ -104,36 +110,56 @@ const CatchPokeModal = (props) => {
           ) : (
             <>
               {catchResult ? (
-                <CardBody>
-                  <CardTitle>
-                    <h1>Successfully caught pokemon</h1>
-                  </CardTitle>
+                <>
+                  {isSaved ? (
+                    <CardBody>
+                      <CardTitle>
+                        <h1>Saved to your pokemon list</h1>
+                      </CardTitle>
 
-                  <CardContent>
-                    <img src={props.data.image} alt={props.data.name} />
+                      <CardIcon>
+                        <MdCheckCircleOutline size={100} />
+                      </CardIcon>
 
-                    <p>{firstLetterUpperCase(props.data.name)}</p>
+                      <CardButton>
+                        <button className="success" onClick={handleCancel}>
+                          Ok
+                        </button>
+                      </CardButton>
+                    </CardBody>
+                  ) : (
+                    <CardBody>
+                      <CardTitle>
+                        <h1>Successfully caught pokemon</h1>
+                      </CardTitle>
 
-                    <input
-                      type="text"
-                      value={nickname}
-                      onChange={(e) => setNickname(e.target.value)}
-                      placeholder="Give a nickname"
-                    />
+                      <CardContent>
+                        <img src={props.data.image} alt={props.data.name} />
 
-                    {showError && <p className="error">{errorMessage}</p>}
-                  </CardContent>
+                        <p>{firstLetterUpperCase(props.data.name)}</p>
 
-                  <CardButton>
-                    <button className="success" onClick={handleSave}>
-                      Save
-                    </button>
+                        <input
+                          type="text"
+                          value={nickname}
+                          onChange={(e) => setNickname(e.target.value)}
+                          placeholder="Give a nickname"
+                        />
 
-                    <button className="danger" onClick={handleCancel}>
-                      Cancel
-                    </button>
-                  </CardButton>
-                </CardBody>
+                        {showError && <p className="error">{errorMessage}</p>}
+                      </CardContent>
+
+                      <CardButton>
+                        <button className="success" onClick={handleSave}>
+                          Save
+                        </button>
+
+                        <button className="danger" onClick={handleCancel}>
+                          Cancel
+                        </button>
+                      </CardButton>
+                    </CardBody>
+                  )}
+                </>
               ) : (
                 <CardBody>
                   <CardTitle>

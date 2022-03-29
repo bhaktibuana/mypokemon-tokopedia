@@ -134,7 +134,12 @@ const Navbar = (props) => {
         </NavbarContent>
       </NavbarContainer>
 
-      <DeleteModal visible={modalVisible} setVisible={setModalVisible} />
+      <DeleteModal
+        visible={modalVisible}
+        setVisible={setModalVisible}
+        setClearOwned={sidebarState[2]}
+        pageName={props.pageName}
+      />
     </>
   );
 };

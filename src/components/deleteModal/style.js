@@ -32,7 +32,8 @@ export const ModalContainer = styled.div`
 
 export const DeleteCard = styled.div`
   width: 400px;
-  height: 200px;
+  height: auto;
+  min-height: 200px;
   background-color: ${primaryColor};
   border-radius: 0.5rem;
   padding: 15px;
@@ -118,4 +119,14 @@ export const DeleteButton = styled.div`
       box-shadow: none;
     }
   }
+`;
+
+export const DeleteIcon = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  color: ${buttonSuccess};
 `;
