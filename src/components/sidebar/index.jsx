@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import { SidebarStateContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import {
   MdDashboard,
@@ -7,7 +8,6 @@ import {
   MdOutlineArrowDropDown,
   MdOutlineCatchingPokemon,
 } from "react-icons/md";
-import { SidebarStateContext } from "../../pages/pokemonList";
 import {
   SidebarContainer,
   SidebarContent,

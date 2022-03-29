@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { SidebarStateContext } from "../../pages/pokemonList";
+import { SidebarStateContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineMenu } from "react-icons/md";
 import {

@@ -10,7 +10,7 @@ const CardView = (props) => {
     return parseInt(urlArr[urlArr.length - 2]);
   };
 
-  const detailPageUrl = `/pokemon/${getId(props.url)}-${props.name}`;
+  const detailPageUrl = `/pokemon/${props.name}`;
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ const CardView = (props) => {
   const getTotalOwned = (name) => {
     const myPokemonData = JSON.parse(localStorage.getItem("my_pokemon_data"));
     const selectPokemon = myPokemonData.filter(
-      (value) => value.name === name && value.id === getId(props.url)
+      (value) => value.pokemonName === name && value.id === getId(props.url)
     );
     return selectPokemon.length;
   };
@@ -34,7 +34,7 @@ const CardView = (props) => {
       <CardContainer>
         <a href={detailPageUrl} className="card-content" onClick={handleClick}>
           <CardImage>
-            <img src={props.imageUrl} alt="pokemon" />
+            <img src={props.imageUrl} alt={props.name} />
           </CardImage>
 
           <CardText>

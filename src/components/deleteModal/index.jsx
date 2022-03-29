@@ -4,6 +4,11 @@ import { DeleteButton, DeleteCard, DeleteTitle, ModalContainer } from "./style";
 const safeDocument = typeof document !== "undefined" ? document : {};
 
 const DeleteModal = (props) => {
+  const handleDelete = () => {
+    localStorage.setItem("my_pokemon_data", JSON.stringify([]));
+    onCancel();
+  };
+
   const onCancel = () => {
     props.setVisible(false);
   };
@@ -26,9 +31,11 @@ const DeleteModal = (props) => {
           </DeleteTitle>
 
           <DeleteButton>
-            <button className="success">Yes</button>
+            <button className="success" onClick={handleDelete}>Yes</button>
 
-            <button className="danger" onClick={onCancel}>Cancel</button>
+            <button className="danger" onClick={onCancel}>
+              Cancel
+            </button>
           </DeleteButton>
         </DeleteCard>
       </ModalContainer>
