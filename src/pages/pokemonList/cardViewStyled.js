@@ -44,6 +44,8 @@ export const CardImage = styled.div`
     max-height: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 0.25rem 0 0 0.25rem;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
 `;
 
