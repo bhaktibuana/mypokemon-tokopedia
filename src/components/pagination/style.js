@@ -34,10 +34,12 @@ export const PaginationContainer = styled.div`
       margin: 0 5px;
     }
 
-    &:hover {
-      border: 1px solid ${tertiaryColor};
-      transition: all 0.2s linear 0s;
-      color: ${tertiaryColor};
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid ${tertiaryColor};
+        transition: all 0.2s linear 0s;
+        color: ${tertiaryColor};
+      }
     }
 
     &:disabled {
@@ -69,10 +71,12 @@ export const PaginationContainer = styled.div`
       margin: 0 5px;
     }
 
-    &:hover {
-      border: 1px solid ${tertiaryColor};
-      transition: all 0.2s linear 0s;
-      color: ${tertiaryColor};
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid ${tertiaryColor};
+        transition: all 0.2s linear 0s;
+        color: ${tertiaryColor};
+      }
     }
 
     &:disabled {
