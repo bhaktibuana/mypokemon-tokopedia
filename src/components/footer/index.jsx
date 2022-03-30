@@ -20,13 +20,13 @@ const Footer = () => {
               My Pokemon is a web application to collect pokemon from the list
               of available pokemon. Users can catch pokemon in the pokemon list
               and give the pokemon a nickname. Pokemon that have been caught
-              will be saved and can be viewed on the "My Pokemon" page.
+              will be saved and can be viewed on the "My Pokemon List" page.
             </p>
           </LeftContent>
 
           <RightContent>
             <div className="header">
-              <img src={require("../../images/pokemon.png")} alt="logo" />
+              <img src={require("../../images/pokemon-130.webp")} alt="logo" />
             </div>
 
             <div className="body">
