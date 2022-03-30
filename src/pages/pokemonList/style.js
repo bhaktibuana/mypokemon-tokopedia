@@ -101,6 +101,8 @@ export const HeaderTitle = styled.div`
   & > img {
     width: 150px;
     height: auto;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
     @media screen and (min-width: 768px) {
       width: 200px;
