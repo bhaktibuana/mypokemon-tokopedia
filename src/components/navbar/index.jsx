@@ -49,7 +49,7 @@ const Navbar = (props) => {
             <a className="logo-container" href="/" onClick={handleLogo}>
               <img
                 className="logo"
-                src={require("../../images/pokemon.png")}
+                src={require("../../images/pokemon-130.webp")}
                 alt="logo"
               />
             </a>
@@ -84,7 +84,7 @@ const Navbar = (props) => {
                   navigate("/mypokemonlist");
                 }}
               >
-                My Pokemon
+                My Pokemon List
               </a>
             </div>
           </MiddleContent>
@@ -94,7 +94,7 @@ const Navbar = (props) => {
               <div>
                 <button className="profile">
                   <img
-                    src={require("../../images/pokeball.png")}
+                    src={require("../../images/pokeball-50x50.webp")}
                     alt="pokeball"
                   />
                 </button>

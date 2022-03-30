@@ -98,7 +98,7 @@ export const MiddleContent = styled.div`
     & > a.nav-item {
       height: 100%;
       margin: 1px;
-      width: 130px;
+      width: 140px;
       display: flex;
       align-items: center;
       justify-content: center;
