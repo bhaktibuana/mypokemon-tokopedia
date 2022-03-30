@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# My Pokemon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+My Pokemon is a web application to collect pokemon from the list of available pokemon. Users can catch pokemon in the pokemon list and give the pokemon a nickname. Pokemon that have been caught will be saved and can be viewed on the "My Pokemon" page.
 
-In the project directory, you can run:
+This project can be accessed online at [https://bhaktibuana-mypokemon.netlify.app](https://bhaktibuana-mypokemon.netlify.app) or you can follow this documentation to use locally on your computer.
 
-### `npm start`
+## What's in this app?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Pokemon List Page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A page that displays a list of available Pokemon along with their names, images and total of Pokemon owned by the user.
+### Pokemon Detail Page
 
-### `npm test`
+A page that displays the details of a Pokemon with its name, image, types, abilities and moves. There is a button that the user can use to catch Pokemon (success probability is 50%), if success then the user can give the Pokemon a nickname and add that Pokemon to `My Pokemon List’. User can catch the same pokemon multiple times but need to give a different nickname for each pokemon.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### My Pokemon List Page
 
-### `npm run build`
+A page that display a list of Pokemon that user have caught. User also can remove/release a Pokemon from the list of this page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Data source
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This app uses [GraphQL](https://graphql.org) ([graphql-pokeapi](https://graphql-pokeapi.vercel.app)) as data source.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technology used in this app
 
-### `npm run eject`
+- [React](https://reactjs.org) with React Hooks and React Context
+- [GraphQL](https://graphql.org) using [Apollo Client](https://www.apollographql.com)
+- CSS-in-JS using [Emotion](https://emotion.sh/docs/introduction)
+- Unit test using [Jest](https://jestjs.io)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- In the root project directory run `npm install` on your terminal.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Run the app
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- In the root project directory you can run `npm start` on your terminal.
+- The app will be running on [http://localhost:3000](http://localhost:3000). Enjoy :grin:
