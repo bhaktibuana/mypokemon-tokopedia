@@ -2,7 +2,7 @@
 
 ## Description
 
-My Pokemon is a web application to collect pokemon from the list of available pokemon. Users can catch pokemon in the pokemon list and give the pokemon a nickname. Pokemon that have been caught will be saved and can be viewed on the "My Pokemon" page.
+My Pokemon is a web application to collect pokemon from the list of available pokemon. Users can catch pokemon in the pokemon list and give the pokemon a nickname. Pokemon that have been caught will be saved and can be viewed on the "My Pokemon List" page.
 
 This project can be accessed online at [https://bhaktibuana-mypokemon.netlify.app](https://bhaktibuana-mypokemon.netlify.app) or you can follow this documentation to use locally on your computer.
 
