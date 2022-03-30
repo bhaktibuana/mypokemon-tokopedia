@@ -24,7 +24,9 @@ const CatchPokeModal = (props) => {
     return value.charAt(0).toUpperCase() + value.slice(1);
   };
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
+    
     const getSavedData = JSON.parse(localStorage.getItem("my_pokemon_data"));
     const checkDuplicate = getSavedData.filter(
       (items) => items.nickname === nickname
@@ -78,7 +80,7 @@ const CatchPokeModal = (props) => {
         } else {
           setCatchResult(false);
         }
-      }, 2000);
+      }, 1500);
     }
   }, [props.visible, catchResult]);
 
@@ -98,7 +100,7 @@ const CatchPokeModal = (props) => {
           {catchResult === null ? (
             <SpinnerContainer>
               <img
-                src={require("../../images/pokeball.png")}
+                src={require("../../images/pokeball-50x50.webp")}
                 alt="pokeball"
                 className="pokeball"
               />
@@ -138,25 +140,27 @@ const CatchPokeModal = (props) => {
 
                         <p>{firstLetterUpperCase(props.data.name)}</p>
 
-                        <input
-                          type="text"
-                          value={nickname}
-                          onChange={(e) => setNickname(e.target.value)}
-                          placeholder="Give a nickname"
-                        />
+                        <form action="#">
+                          <input
+                            type="text"
+                            value={nickname}
+                            onChange={(e) => setNickname(e.target.value)}
+                            placeholder="Give a nickname"
+                          />
 
-                        {showError && <p className="error">{errorMessage}</p>}
+                          {showError && <p className="error">{errorMessage}</p>}
+
+                          <CardButton>
+                            <button className="success" type="submit" onClick={handleSave}>
+                              Save
+                            </button>
+
+                            <button className="danger" onClick={handleCancel}>
+                              Cancel
+                            </button>
+                          </CardButton>
+                        </form>
                       </CardContent>
-
-                      <CardButton>
-                        <button className="success" onClick={handleSave}>
-                          Save
-                        </button>
-
-                        <button className="danger" onClick={handleCancel}>
-                          Cancel
-                        </button>
-                      </CardButton>
                     </CardBody>
                   )}
                 </>

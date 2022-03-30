@@ -148,7 +148,7 @@ export const CardContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 15px 0;
+  margin-top: 15px;
   padding: 0 10px;
 
   & > img {
@@ -168,28 +168,32 @@ export const CardContent = styled.div`
     color: ${secondaryColor};
   }
 
-  & > input {
+  & > form {
     width: 100%;
-    height: 40px;
-    border-radius: 0.25rem;
-    border: 2px solid ${tertiaryColor};
-    padding: 0 15px;
-    margin-top: 15px;
-    font-size: 1rem;
-    color: ${secondaryColor};
-    transition: all 0.2s ease-in-out;
 
-    &:focus {
-      outline: none;
-      border: 2px solid ${quaternaryColor};
+    & > input {
+      width: 100%;
+      height: 40px;
+      border-radius: 0.25rem;
+      border: 2px solid ${tertiaryColor};
+      padding: 0 15px;
+      margin-top: 15px;
+      font-size: 1rem;
+      color: ${secondaryColor};
+      transition: all 0.2s ease-in-out;
+
+      &:focus {
+        outline: none;
+        border: 2px solid ${quaternaryColor};
+      }
     }
-  }
 
-  & > p.error {
-    width: 100%;
-    font-size: 0.8rem;
-    color: ${buttonDanger};
-    margin-top: 5px;
+    & > p.error {
+      width: 100%;
+      font-size: 0.8rem;
+      color: ${buttonDanger};
+      margin-top: 5px;
+    }
   }
 `;
 
@@ -199,7 +203,7 @@ export const CardButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  margin-top: 20px;
 
   & > button.success {
     width: 100px;
