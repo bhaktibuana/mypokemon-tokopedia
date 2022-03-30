@@ -47,7 +47,7 @@ const DeleteModal = (props) => {
             </DeleteIcon>
 
             <DeleteButton>
-              <button className="success" onClick={onCancel}>
+              <button data-testid="ok-delete-modal" className="success" onClick={onCancel}>
                 Ok
               </button>
             </DeleteButton>
@@ -59,11 +59,11 @@ const DeleteModal = (props) => {
             </DeleteTitle>
 
             <DeleteButton>
-              <button className="success" onClick={handleDelete}>
+              <button data-testid="confirm-delete-modal" className="success" onClick={handleDelete}>
                 Yes
               </button>
 
-              <button className="danger" onClick={onCancel}>
+              <button data-testid="cancel-delete-modal" className="danger" onClick={onCancel}>
                 Cancel
               </button>
             </DeleteButton>
