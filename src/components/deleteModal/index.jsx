@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { DeleteButton, DeleteCard, DeleteIcon, DeleteTitle, ModalContainer } from "./style";
+import {
+  DeleteButton,
+  DeleteCard,
+  DeleteIcon,
+  DeleteTitle,
+  ModalContainer,
+} from "./style";
 import { MdCheckCircleOutline } from "react-icons/md";
 
 const safeDocument = typeof document !== "undefined" ? document : {};
@@ -49,7 +55,7 @@ const DeleteModal = (props) => {
         ) : (
           <DeleteCard>
             <DeleteTitle>
-              <h1>Are you sure you want to delete your pokemon?</h1>
+              <h1>Are you sure you want to delete all of your pokemon?</h1>
             </DeleteTitle>
 
             <DeleteButton>
