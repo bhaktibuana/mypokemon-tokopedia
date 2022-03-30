@@ -15,17 +15,6 @@ const Pagination = (props) => {
   const [showEndNumber, setShowEndNumber] = useState(false);
   const [pageNumberView, setPageNumberView] = useState(null);
 
-  // showSizeChanger={true}
-  // defaultCurrent={1}
-  // defaultPageSize={pageSize}
-  // total={totalPages}
-  // onChange={(page) => {
-  //   fetchProducts(page);
-  // }}
-  // onShowSizeChange={(current, size) => {
-  //   setPageSize(size);
-  // }}
-
   const handlePagination = (total, current) => {
     const tempArray = [];
     const totalPage = Math.ceil(total);
@@ -86,29 +75,41 @@ const Pagination = (props) => {
     }
   };
 
+  const scrollToContentBody = (offset) => {
+    const element = document.getElementById("content-body");
+    const headerOffset = offset;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+
   const handleNext = () => {
     props.setCurrent(props.current + 1);
-    window.scrollTo(0, 0);
+    scrollToContentBody(70);
   };
 
   const handleQuickNext = () => {
     props.setCurrent(props.current + 5);
-    window.scrollTo(0, 0);
+    scrollToContentBody(70);
   };
 
   const handlePrevious = () => {
     props.setCurrent(props.current - 1);
-    window.scrollTo(0, 0);
+    scrollToContentBody(70);
   };
 
   const handleQuickPrevious = () => {
     props.setCurrent(props.current - 5);
-    window.scrollTo(0, 0);
+    scrollToContentBody(70);
   };
 
   const handleNumber = (number) => {
     props.setCurrent(number);
-    window.scrollTo(0, 0);
+    scrollToContentBody(70);
   };
 
   useEffect(() => {
