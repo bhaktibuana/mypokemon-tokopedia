@@ -55,7 +55,7 @@ const Sidebar = (props) => {
           <SidebarTitle>
             <a href="/" className="title" onClick={(e) => e.preventDefault()}>
               <img
-                src={require("../../images/pokemon.png")}
+                src={require("../../images/pokemon-130.webp")}
                 alt="logo"
                 className="title-img"
                 onClick={() => navigate("/")}
@@ -71,7 +71,7 @@ const Sidebar = (props) => {
               onClick={() => setProfileExpand(!profileExpand)}
             >
               <img
-                src={require("../../images/pokeball.png")}
+                src={require("../../images/pokeball-50x50.webp")}
                 alt="pokeball"
                 className="profile-img"
               />
@@ -128,7 +128,7 @@ const Sidebar = (props) => {
               }}
             >
               <MdOutlineCatchingPokemon size={24} />
-              <p>My Pokemon</p>
+              <p>My Pokemon List</p>
             </a>
           </SidebarItems>
         </SidebarContent>
