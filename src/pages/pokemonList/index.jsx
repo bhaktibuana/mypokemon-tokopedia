@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { SidebarStateContext } from "../../App";
+import React, { useContext, useEffect, useState } from "react";
+import { CurrentPageContext, SidebarStateContext } from "../../App";
 import Footer from "../../components/footer";
 import Navbar from "../../components/navbar";
 import Sidebar from "../../components/sidebar";
@@ -39,9 +39,10 @@ const GET_POKEMONS = gql`
 const PokemonList = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [pokeCard, setPokeCard] = useState([]);
-  const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [clearOwned, setClearOwned] = useState(false);
+
+  const pageState = useContext(CurrentPageContext);
 
   const pageSize = 10;
 
@@ -72,7 +73,7 @@ const PokemonList = () => {
 
   const gqlVariables = {
     limit: pageSize,
-    offset: (page - 1) * pageSize,
+    offset: (pageState[0] - 1) * pageSize,
   };
 
   const { loading, error, data } = useQuery(GET_POKEMONS, {
@@ -90,6 +91,10 @@ const PokemonList = () => {
     }
   }, [loading, error, data, clearOwned]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
       <PokemonListContainer>
@@ -105,23 +110,23 @@ const PokemonList = () => {
             <ContentHeader>
               <HeaderBackground>
                 <img
-                  src={require("../../images/background.jpg")}
+                  src={require("../../images/background.webp")}
                   alt="background"
                 />
               </HeaderBackground>
 
               <HeaderTitle>
-                <img src={require("../../images/pokemon.png")} alt="title" />
+                <img src={require("../../images/pokemon-300.webp")} alt="title" />
               </HeaderTitle>
             </ContentHeader>
 
-            <ContentBody>
+            <ContentBody id="content-body">
               <CardList>{pokeCard}</CardList>
 
               <PaginationContainer>
                 <Pagination
-                  current={page}
-                  setCurrent={setPage}
+                  current={pageState[0]}
+                  setCurrent={pageState[1]}
                   total={totalPage}
                 />
               </PaginationContainer>
