@@ -87,6 +87,10 @@ const PokemonDetail = () => {
     }
   }, [loading, error, data]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
       <PokemonDetailContainer>
